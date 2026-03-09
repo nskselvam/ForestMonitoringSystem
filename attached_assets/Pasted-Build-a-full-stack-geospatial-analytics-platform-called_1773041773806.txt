@@ -1,0 +1,423 @@
+Build a full-stack geospatial analytics platform called
+
+"SENTINEL-2 AUTOMATED LAND CHANGE MAPPING SYSTEM"
+
+The system must replicate the UI, structure, analytics, and workflow exactly like the uploaded screenshots.
+
+The application analyzes land use change in **Tamil Nadu** using **Sentinel-2 satellite imagery** and automatically detects vegetation loss, urban expansion, water encroachment, and land transitions.
+
+The system should look like a professional government environmental monitoring dashboard.
+
+---
+
+TECH STACK
+
+Frontend
+React (Vite)
+TailwindCSS
+Chart.js
+Leaflet for maps
+Three.js for 3D visualization
+Framer Motion for animations
+
+Backend
+Node.js with Express
+
+Processing Engine
+Python microservice
+
+Python Libraries
+sentinelhub
+rasterio
+numpy
+opencv
+scikit-image
+pandas
+scikit-learn
+
+---
+
+DATA SOURCE
+
+Sentinel-2 Satellite Imagery
+
+Resolution: 10 meters per pixel
+
+Bands used:
+
+B04 = Red
+B08 = Near Infrared
+B11 = SWIR
+
+These bands are used to compute vegetation and urban indices.
+
+---
+
+SYSTEM WORKFLOW
+
+User selects:
+
+Start Year
+End Year
+
+Example:
+
+2022 → 2026
+
+Then the system must:
+
+1. Fetch Sentinel-2 imagery for Tamil Nadu
+2. Extract spectral bands
+3. Compute NDVI vegetation index
+4. Compute NDBI urban index
+5. Classify land cover
+6. Detect land use changes
+7. Detect hotspots
+8. Calculate risk metrics
+9. Generate dashboard visualizations
+
+---
+
+SATELLITE INDICES
+
+NDVI (Vegetation Index)
+
+Formula:
+
+NDVI = (B08 − B04) / (B08 + B04)
+
+Purpose
+
+Measure vegetation health
+Detect forest loss
+Detect agricultural land loss
+
+---
+
+NDBI (Built-up Index)
+
+Formula
+
+NDBI = (B11 − B08) / (B11 + B08)
+
+Purpose
+
+Detect buildings
+Detect urban expansion
+Detect industrial growth
+
+---
+
+LAND CLASSIFICATION
+
+Each pixel must be classified into:
+
+Water
+Vegetation
+Built-up
+Barren
+
+---
+
+CHANGE DETECTION
+
+Compare satellite images from two years.
+
+Detect transitions such as:
+
+Vegetation → Built-up
+Vegetation → Barren
+Water → Built-up
+Vegetation → Sparse vegetation
+Urban density increase
+
+---
+
+CALCULATED METRICS
+
+Vegetation Loss %
+Urban Expansion %
+Total Landscape Change %
+
+Pixel counts
+Area estimation
+Hotspot detection
+
+---
+
+HOTSPOT DETECTION
+
+Cluster land changes.
+
+Display:
+
+Top deforestation hotspots
+Urban expansion zones
+
+Show:
+
+Pixel count
+Coordinates
+Estimated land area
+
+---
+
+RISK ANALYSIS
+
+Calculate
+
+Transition Velocity
+
+Transition Velocity = rate of land class change
+
+Use this to classify:
+
+Low Risk
+Medium Risk
+High Risk
+
+---
+
+ENCROACHMENT ANALYSIS
+
+Detect:
+
+Water bodies shrinking
+Vegetation converting to buildings
+Natural land turning barren
+
+Flag these zones as:
+
+Potential Encroachment Areas
+
+---
+
+DASHBOARD UI STRUCTURE
+
+Header
+
+Sentinel-2 Land Change Detection System
+Tamil Nadu Region
+NDVI / NDBI Analysis
+Meter-Level Precision
+
+---
+
+Section 1
+
+Select Year Range
+
+Start Year input
+End Year input
+
+Buttons
+
+Run Analysis
+Fetch Previous Results
+
+---
+
+Section 2
+
+Tabs
+
+Overview & Map
+Deforestation & Urban Expansion
+Before / After Comparison
+
+---
+
+Section 3
+
+Deforestation Detection
+
+Cards showing
+
+Area Deforested %
+Pixels Lost
+Hotspots Found
+NDVI Decline
+
+List top hotspots with coordinates.
+
+---
+
+Section 4
+
+Urban Expansion
+
+Trees → Buildings %
+Pixels Converted
+Urban Growth Rate
+Expansion Zones
+
+---
+
+Section 5
+
+Sentinel-2 Indices Analysis
+
+NDVI Year 1 Mean
+NDVI Year 2 Mean
+NDVI Change
+
+NDBI Year 1 Mean
+NDBI Year 2 Mean
+NDBI Change
+
+---
+
+Section 6
+
+NDBI Comparison Images
+
+Two panels
+
+2022 (Before)
+2026 (After)
+
+Legend
+
+Dense Urban
+Moderate Urban
+Sparse Urban
+Natural Areas
+
+---
+
+Section 7
+
+Visual Change Summary
+
+Vegetation Loss %
+Urban Expansion %
+Total Change %
+
+---
+
+Section 8
+
+Interactive Map
+
+Leaflet map of Tamil Nadu
+
+Markers:
+
+Deforestation hotspots
+Urban expansion zones
+High risk regions
+Medium risk regions
+Low risk regions
+
+---
+
+Section 9
+
+Three.js 3D Land Change Visualization
+
+Create a Three.js scene that visualizes land change in 3D.
+
+Scene features:
+
+Terrain grid representing land pixels
+Animated particles representing land transitions
+Bars showing land distribution
+Terrain morph animation when switching years
+
+Land colors:
+
+Blue = Water
+Green = Vegetation
+Purple = Built-up
+Orange = Barren
+
+Particles flow to show land transitions such as vegetation converting to buildings.
+
+---
+
+Section 10
+
+Land Cover Comparison Chart
+
+Bar chart comparing:
+
+2022 vs 2026
+
+Vegetation
+Built-up
+Water
+Barren
+
+---
+
+Section 11
+
+Risk Assessment
+
+Display
+
+Risk score
+Transition velocity
+
+---
+
+Section 12
+
+Land Distribution
+
+Show land distribution for:
+
+2022
+2026
+
+---
+
+Section 13
+
+Change Summary
+
+Water → Barren
+Vegetation → Built-up
+Vegetation → Barren
+Total landscape changed %
+
+---
+
+DESIGN REQUIREMENTS
+
+Professional government dashboard style.
+
+Colors
+
+Dark blue headers
+White panels
+Green = vegetation
+Red = deforestation
+Purple = urban expansion
+Blue = water
+
+---
+
+FOOTER
+
+Sentinel-2 Automated Change Mapping System
+Government of Tamil Nadu
+Powered by NDVI and NDBI Analysis
+
+---
+
+IMPORTANT
+
+The system must:
+
+Use real Sentinel-2 data
+Compute NDVI and NDBI correctly
+Display charts and maps
+Render Three.js visualizations
+Run locally on localhost
+
+---
+
+GOAL
+
+Create a complete working satellite-based automated change mapping system that demonstrates environmental monitoring, land use analytics, and encroachment detection suitable for a hackathon or government prototype.
