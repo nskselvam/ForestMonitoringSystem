@@ -79,7 +79,15 @@ export const analysisResponseSchema = z.object({
     vegetationToBuiltUp: z.number(),
     vegetationToBarren: z.number(),
     totalChanged: z.number()
-  })
+  }),
+  prediction: z.object({
+    nextYearVegetationLoss: z.number(),
+    nextYearUrbanGrowth: z.number(),
+    predictedRiskScore: z.number(),
+    confidence: z.number(),
+    recommendation: z.string(),
+    projectedYear: z.number()
+  }).optional()
 });
 
 export type AnalysisResponse = z.infer<typeof analysisResponseSchema>;
