@@ -454,7 +454,7 @@ export default function Dashboard() {
                 </div>
                 
                 {/* Hotspots Bar Chart */}
-                <div className="dashboard-card p-4">
+            {/*     <div className="dashboard-card p-4">
                   <h3 className="font-semibold text-slate-700 mb-4">Hotspot Areas (sq. meters in thousands)</h3>
                   <ResponsiveContainer width="100%" height={200}>
                     <BarChart data={hotspotChartData} layout="horizontal">
@@ -471,7 +471,7 @@ export default function Dashboard() {
                       <Bar dataKey="area" fill="#DC2626" radius={[0, 8, 8,0]} />
                     </BarChart>
                   </ResponsiveContainer>
-                </div>
+                </div> */}
               </div>
 
               {/* Urban Expansion Side */}
@@ -507,7 +507,7 @@ export default function Dashboard() {
                 </div>
                 
                 {/* Urban Zones Bar Chart */}
-                <div className="dashboard-card p-4">
+                {/* <div className="dashboard-card p-4">
                   <h3 className="font-semibold text-slate-700 mb-4">Expansion Zones (sq. meters in thousands)</h3>
                   <ResponsiveContainer width="100%" height={200}>
                     <BarChart data={urbanZonesData} layout="horizontal">

@@ -7,7 +7,7 @@
 const getApiUrl = () => {
   // For Expo Go on physical device, replace with your computer's IP
   // Find your IP with: ipconfig getifaddr en0 (Mac) or ipconfig (Windows)
-  const LOCAL_IP = '172.31.99.111'; // Your computer's local IP address
+  const LOCAL_IP = '172.31.99.196'; // Your computer's local IP address
   return `http://${LOCAL_IP}:8000`;
 };
 
